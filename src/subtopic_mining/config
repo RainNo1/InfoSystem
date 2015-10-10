@@ -1,0 +1,42 @@
+#输入文件的目录
+input_path=/users/songwei/xuwenbin/diversification/ntcir09/
+#输出文件的目录
+result_path=/users/songwei/xuwenbin/subtopic/src1/ntcir11/
+#是否从本地缓存中读取Embedding的信息，针对于每次都要重新调用model(yes/no)
+read_local_file=yes
+stopword_file = /users/songwei/xuwenbin/subtopic/ntcir09/stoplist_utf8.txt
+#是否输出中间词语聚类结果(yes/no)
+word_cluster_out=no
+#扩展词语使用的相似度下限
+word_sim=0.55
+#第一层（高层）聚类的方法 KMeans,DBScan,AP
+first_cluster_method= AP
+#第一层聚类使用的文本处理方式:(VSM InvertedDocVec EmbeddingVec CategoryVec TopicVec VIE VIEC EC IU EW EWE VSMI)
+first_data_preparation=VSM
+#是否进行扩展 (yes/no)
+first_expansion=no
+#第一层(高层)DBScan 的参数 
+first_db_eps= 0.3
+#第一层(高层)DBScan的最少类的个数
+first_db_min_n= 2
+#第一层(高层)AP参数
+first_ap_preference= 0.5
+#第一层(高层)KMeans算法的参数，默认30
+first_kmeans=5
+#第二层(底层)聚类的方法:KMeans,AP
+second_cluster_method=KMeans
+#第二层(底层)使用的数据向量化方式：(VSM InvertedDocVec EmbeddingVec CategoryVec TopicVec VIE VIEC EC IU EW EWE VSMI)
+second_data_preparation=EC
+#第二层(底层)是否使用扩展词聚类的方式(yes/no)暂时不只是yes，目前只支持no
+second_expansion=no
+#第二层(底层)DBScan的密度参数(0,1.0)
+second_db_eps=0.3
+#第二层(底层)DBScan的最小聚类个数 默认是2
+second_db_min_n=2
+#第二层(底层)AP算法的参数，默认0.5
+second_ap_preference=0.5
+#第二层(底层)KMeans算法的参数，默认30
+second_kmeans=30
+#注释
+annotation=this system with....
+
